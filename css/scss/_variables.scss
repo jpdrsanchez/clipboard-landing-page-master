@@ -1,0 +1,59 @@
+// 
+// Variables
+// 
+// 1. Colors
+// 2. Fonts
+// 3. Media Queries
+// 4. Functions and Mixins
+// 
+// ======================================================================
+
+// 
+// 1. Colors
+// ----------------------------------------------------------------------
+$cyan: #26baa4;
+$light-blue: #6173ff;
+$dark-blue: #4c545d;
+$grayish-blue: #9fabb2;
+
+// 
+// 2. Fonts
+// ----------------------------------------------------------------------
+$primary-font: 'Bai Jamjuree', sans-serif;
+$weights: (
+  regular: 400,
+  semi-bold: 600
+);
+
+@mixin font($size, $weight) {
+  $weight-value: map-get($weights, $weight);
+  font-size: to-rem($size);
+  font-weight: $weight-value;
+}
+
+// 
+// 3. Media Queries
+// ----------------------------------------------------------------------
+$breakpoints: (
+  small: 576,
+  medium: 769,
+  large: 992,
+  x-large: 1200,
+);
+
+@mixin breakpoint($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+  
+  @media screen and (min-width: to-rem($breakpoint-value)) {
+    @content;
+  }
+}
+
+// 
+// 4. Functions and Mixins
+// ----------------------------------------------------------------------
+
+@function to-rem($size) {
+  $value: ($size / 16) + rem;
+  @return $value;
+}
