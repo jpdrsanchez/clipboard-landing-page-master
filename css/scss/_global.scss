@@ -44,3 +44,20 @@ img {
     max-width: to-rem(1140);
   }
 }
+
+.title {
+  line-height: 1.2;
+  margin-bottom: to-rem(15);
+  margin-top: to-rem(60);
+  text-align: center;
+  @include font(32, semi-bold, $dark-blue);
+
+  @include breakpoint(medium) {
+    @include font(48, semi-bold, $dark-blue);
+  }
+}
+
+.text {
+  @include font(14, regular);
+  text-align: center;
+}
