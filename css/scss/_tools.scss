@@ -20,15 +20,15 @@
 
 .black-list::before {
   @extend %icons;
-  background: url('../../images/icon-blacklist.svg') no-repeat center center;
+  background: url('../images/icon-blacklist.svg') no-repeat center center;
 }
 
 .snippets::before {
   @extend %icons;
-  background: url('../../images/icon-text.svg') no-repeat center center;
+  background: url('../images/icon-text.svg') no-repeat center center;
 }
 
 .preview::before {
   @extend %icons;
-  background: url('../../images/icon-preview.svg') no-repeat center center;
+  background: url('../images/icon-preview.svg') no-repeat center center;
 }
