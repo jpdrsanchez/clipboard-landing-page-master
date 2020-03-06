@@ -1,0 +1,63 @@
+.footer {
+  background: darken($white, 4);
+  @include margin-heigth(90, 0);
+  @include padding-heigth(30);
+
+  &__container {
+    @include breakpoint(small) {
+      align-items: flex-start;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    @include margin-heigth(0, 30);
+
+    img {
+      width: to-rem(50);
+      @include margin-center;
+    }
+  }
+
+  &__item {
+    @include margin-heigth(15);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include breakpoint(small) {
+      @include margin-heigth(0);
+      @include margin-width(30);
+    }
+  }
+
+  &__link {
+    display: block;
+    text-align: center;
+    transition: .3s;
+    @include font(18, regular, $dark-blue);
+    @include breakpoint(small) {
+      text-align: left;
+    }
+
+    &:hover {
+      color: $cyan;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    @include padding-heigth(30);
+    @include breakpoint(small) {
+      @include padding-heigth(0)
+    }
+  }
+
+  &__icon {
+    @include margin-width(10);
+    @include padding-width(10);
+  }
+}

@@ -1,0 +1,18 @@
+.partners {
+
+  @include breakpoint(large) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__link {
+    display: block;
+
+  }
+
+  &__image {
+    @include margin-center;
+    @include margin-heigth(0, 90);
+  }
+}

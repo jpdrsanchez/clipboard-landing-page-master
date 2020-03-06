@@ -24,9 +24,9 @@ img {
   margin-left: auto;
   margin-right: auto;
   max-width: to-rem(375);
-  padding-left: to-rem(15);
-  padding-right: to-rem(15);
   position: relative;
+
+  @include padding-width(15);
 
   @include breakpoint(small) {
     max-width: to-rem(540);
@@ -47,17 +47,106 @@ img {
 
 .title {
   line-height: 1.2;
-  margin-bottom: to-rem(15);
-  margin-top: to-rem(60);
   text-align: center;
-  @include font(32, semi-bold, $dark-blue);
 
-  @include breakpoint(medium) {
-    @include font(48, semi-bold, $dark-blue);
+  @include margin-heigth(60, 15);
+
+  &--type--main {
+    @include font(32, semi-bold, $dark-blue);
+    @include breakpoint(small) {
+      @include font(48, semi-bold, $dark-blue);
+    }
+  }
+  &--type--sub {
+    @include font(28, semi-bold, $dark-blue);
+    @include breakpoint(small) {
+      @include font(40, semi-bold, $dark-blue);
+    }
+  }
+  &--type--topic {
+    @include font(24, semi-bold, $dark-blue);
+    @include breakpoint(small) {
+      @include font(28, semi-bold, $dark-blue);
+    }
+    @include breakpoint(medium) {
+      text-align: left;
+    }
   }
 }
 
 .text {
-  @include font(14, regular);
   text-align: center;
+
+  @include font(16, regular);
+  @include margin-heigth(15, 30);
+
+
+
+  @include breakpoint(small) {
+    @include font(18, regular);
+  }
+
+  &--type--main {
+    @include breakpoint(medium) {
+      max-width: to-rem(785);
+      @include margin-center;
+    }
+  }
+  &--type--topic {
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+  }
 }
+
+.button-wrapper {
+  @include breakpoint(small) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.button {
+  border-radius: to-rem(30);
+  border-bottom: to-rem(4) solid;
+  display: block;
+  max-width: to-rem(375);
+  text-align: center;
+  transition: .3s;
+
+  @include margin-heigth(15, 20);
+  @include padding-heigth(15, 10);
+  @include font(18, 'semi-bold', $white);
+
+  @include breakpoint(small) {
+    @include margin-width(10);
+    @include padding-width(40);
+  }
+
+  &--color--green {
+    background-color: $cyan;
+    border-bottom-color: darken($cyan, 5);
+    &:hover {
+      background-color: lighten($cyan, 5);
+      border-bottom-color: $cyan;
+    }
+  }
+
+  &--color--blue {
+    background-color: $light-blue;;
+    border-bottom-color: darken($light-blue, 5);
+    &:hover {
+      background-color: lighten($light-blue, 5);
+      border-bottom-color: $light-blue;
+    }
+  }
+}
+
+.attribution { 
+  background: darken($white, 4);
+  color: $dark-blue;
+  font-size: 16px; 
+  text-align: center; 
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }

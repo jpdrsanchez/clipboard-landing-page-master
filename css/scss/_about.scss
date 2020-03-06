@@ -1,0 +1,42 @@
+.about {
+  @include padding-heigth(90);
+
+  &__wrapper {
+    @include breakpoint(medium) {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__image, &__content {
+    @include breakpoint(medium) {
+      flex: 1;
+    }
+  }
+
+  &__image {
+    @include breakpoint(medium) {
+      padding-right: to-rem(15);
+    }
+
+    img {
+      @include breakpoint(medium) {
+        position: absolute;
+        bottom: 50px;
+        left: -450px;
+      }
+      @include breakpoint(large) {
+        left: -350px;
+      }
+      @include breakpoint(x-large) {
+        left: -250px;
+      }
+    }
+  }
+
+  &__content {
+    @include breakpoint(medium) {
+      padding-left: to-rem(15);
+    }
+  }
+}

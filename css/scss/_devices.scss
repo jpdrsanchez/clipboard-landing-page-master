@@ -1,0 +1,7 @@
+.devices {
+  @include padding-heigth(0, 60);
+
+  &__image {
+    @include margin-center;
+  }
+}

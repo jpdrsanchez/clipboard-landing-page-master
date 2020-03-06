@@ -4,7 +4,7 @@
 // 1. Colors
 // 2. Fonts
 // 3. Media Queries
-// 4. Functions and Mixins
+// 4. Functions, Mixins and Placeholders
 // 
 // ======================================================================
 
@@ -15,6 +15,7 @@ $cyan: #26baa4;
 $light-blue: #6173ff;
 $dark-blue: #4c545d;
 $grayish-blue: #9fabb2;
+$white: #fff;
 
 // 
 // 2. Fonts
@@ -52,10 +53,52 @@ $breakpoints: (
 }
 
 // 
-// 4. Functions and Mixins
+// 4. Functions, Mixins and Placeholders
 // ----------------------------------------------------------------------
+
+// Unitis
 
 @function to-rem($size) {
   $value: ($size / 16) + rem;
   @return $value;
+}
+
+// Margins
+
+@mixin margin-heigth($top: 0, $bottom: $top) {
+  margin-top: to-rem($top);
+  margin-bottom: to-rem($bottom);
+}
+
+@mixin margin-width($left: 0, $right: $left) {
+  margin-left: to-rem($left);
+  margin-right: to-rem($right);
+}
+
+@mixin margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Paddings
+
+@mixin padding-heigth($top: 0, $bottom: $top) {
+  padding-top: to-rem($top);
+  padding-bottom: to-rem($bottom);
+}
+
+@mixin padding-width($left: 0, $right: $left) {
+  padding-left: to-rem($left);
+  padding-right: to-rem($right);
+}
+
+// Icons
+
+%icons {
+  content: '';
+  display: block;
+  height: to-rem(40);
+  margin-bottom: to-rem(30);
+  width: to-rem(50);
+  @include margin-center;
 }

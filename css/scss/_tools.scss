@@ -1,0 +1,34 @@
+.tools {
+  @include padding-heigth(0, 90);
+
+  &__wrapper {
+    @include breakpoint(large) {
+      display: flex;
+    }
+  }
+  &__item {
+    @include breakpoint(large) {
+      flex: 1;
+      @include padding-width(15);
+    }
+
+    h3, p {
+      text-align: center;
+    }
+  }
+}
+
+.black-list::before {
+  @extend %icons;
+  background: url('../../images/icon-blacklist.svg') no-repeat center center;
+}
+
+.snippets::before {
+  @extend %icons;
+  background: url('../../images/icon-text.svg') no-repeat center center;
+}
+
+.preview::before {
+  @extend %icons;
+  background: url('../../images/icon-preview.svg') no-repeat center center;
+}
